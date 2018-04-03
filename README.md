@@ -6,7 +6,7 @@ Install source (requires git, make, gettext and Python):
 ```
 $ git clone https://github.com/vb64/Tg2Vk.git
 $ cd Tg2Vk
-$ make setup
+$ sudo make setup
 ```
 
 There are some [additional notes for setup on Windows](WINDOWS.md).
