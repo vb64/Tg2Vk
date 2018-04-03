@@ -11,7 +11,7 @@ $ sudo make setup
 
 There are some [additional notes for setup on Windows](WINDOWS.md).
 
-Edit file `source/settings.py` for your credentials for Telegram and VK. Then go to Tg2Vk project root catalog and run
+Edit file `source/settings.py` for your credentials for Telegram and VK, then
 
 ```
 make run
