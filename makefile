@@ -29,3 +29,9 @@ messages:
 setup: media
 	python -m pip install -t $(LIBDIR) -r $(LIBDIR)/requirements.txt
 	python -m pip install -r requirements.txt
+
+upload: media
+	python setup.py bdist_wheel
+	python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+	echo vizit https://test.pypi.org/project/Tg2Vk
+	echo use: pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple Tg2Vk
