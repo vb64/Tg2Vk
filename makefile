@@ -19,6 +19,9 @@ run:
 flake8:
 	python -m flake8 --max-line-length=110 --exclude=libs --builtins="_" $(S)
 
+lint:
+	python -m pylint $(S)/localhost.py $(S)/settings.py $(S)/telegram
+
 media:
 	make -C $(LOCALEDIR)
 

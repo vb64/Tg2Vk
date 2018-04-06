@@ -1,2 +1,3 @@
 Babel
 flake8
+pylint

@@ -9,7 +9,9 @@ def is_from_master(message):
 
 class Bot(TeleBot):
 
-    def __init__(self, bot_token, master_username, app_id, vk_login, vk_pass):
+    def __init__(
+      self, bot_token, master_username, app_id, vk_login, vk_pass
+    ):  # pylint: disable=too-many-arguments
         TeleBot.__init__(self, bot_token)
 
         self.__id = None
@@ -22,7 +24,7 @@ class Bot(TeleBot):
           user_password=vk_pass,
           scope="wall, messages"
         )
-        self.vk = vk.API(session, v='5.35')
+        self.vk_api = vk.API(session, v='5.35')
 
     def tele_id(self):
         if self.__id is None:
@@ -37,9 +39,9 @@ class Bot(TeleBot):
         return self.__name
 
     def __set_info(self):
-        me = self.get_me()
-        self.__id = me.id
-        self.__name = me.username
+        me_info = self.get_me()
+        self.__id = me_info.id
+        self.__name = me_info.username
 
     @staticmethod
     def set_log_level(level):
@@ -49,7 +51,7 @@ class Bot(TeleBot):
         vk_logger.setLevel(level)
 
 
-bot = Bot(
+bot = Bot(  # pylint: disable=invalid-name
   settings.BOT_TOKEN,
   settings.USERNAME,
   settings.VK_APP_ID,

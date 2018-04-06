@@ -9,7 +9,7 @@ def private_with_master(message):
 def start(message):
     """ function responds to any content in private chat with bot owner
     """
-    bot.vk.wall.post(message=message.text)
+    bot.vk_api.wall.post(message=message.text)
     reply = _("Message was sent to your wall in VK.")
 
     return bot.reply_to(message, reply)
