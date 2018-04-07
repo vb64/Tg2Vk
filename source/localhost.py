@@ -1,3 +1,6 @@
+""" This file run your bot on localhost.
+Bot works until Ctrl+C pressed.
+"""
 import os
 import sys
 import logging
@@ -6,6 +9,10 @@ import settings
 
 
 def main():
+    """ Read credentials from settings.py.
+    Set up i18n and define '_' function in the global namespace.
+    Add 'libs' directory with libraries, and start the bot.
+    """
     params = [
       settings.BOT_TOKEN,
       settings.USERNAME,

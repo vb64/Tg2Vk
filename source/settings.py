@@ -1,3 +1,5 @@
+""" Credentials for bot owner. """
+
 # bot language. available settings: 'en', 'ru'
 LANGUAGE = 'en'
 
